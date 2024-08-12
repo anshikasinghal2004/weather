@@ -121,6 +121,7 @@ export default function Home() {
   if (error)
     return (
       <div className="flex items-center min-h-screen justify-center">
+        {/* @ts-ignore */}
         <p className="text-red-400">{error.message}</p>
       </div>
     );
@@ -211,6 +212,7 @@ export default function Home() {
                     airPressure={`${firstData?.main.pressure} hPa`}
                     humidity={`${firstData?.main.humidity}%`}
                     sunrise={format(data?.city.sunrise ?? 1702949452, "H:mm")}
+                    // sunrise={}
                     sunset={format(data?.city.sunset ?? 1702517657, "H:mm")}
                     windSpeed={convertWindSpeed(firstData?.wind.speed ?? 1.64)}
                   />
